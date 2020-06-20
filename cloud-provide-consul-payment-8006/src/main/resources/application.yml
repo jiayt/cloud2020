@@ -1,0 +1,14 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: consul-provider-payment
+  #consul注册中心地址 centos7虚拟机中docker部署
+  cloud:
+    consul:
+      host: 192.168.116.130
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        hostname: 192.168.1.103  #暂时不明白，这里不配置，consul管理页面会健康检查报红叉
